@@ -1,6 +1,6 @@
 (function(){
   const t0 = performance.now();
-  while (performance.now() - t0 < 1000) {} // <--- UNE AUTRE PAUSE FORCÉE DE 1 SECONDE
+  while (performance.now() - t0 < 1000) {}
   const waste = [];
   for (let i=0;i<200000;i++) { waste.push(Math.random()*i); }
   window.__waste = waste;
