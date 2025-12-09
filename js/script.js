@@ -1,15 +1,19 @@
+/* script.js optimisé */
 (function(){
-  const t0 = performance.now();
-  while (performance.now() - t0 < 1000) {}
-  const waste = [];
-  for (let i=0;i<200000;i++) { waste.push(Math.random()*i); }
-  window.__waste = waste;
-window.addEventListener('load', function(){
-    const imgs = document.querySelectorAll('.card img');
+  // Suppression des boucles de ralentissement artificiel
+  
+  window.addEventListener('load', function(){
+    const imgs = document.querySelectorAll('.card img, .image-wrapper img');
+    
+    // Gestion de l'effet d'apparition (fade-in)
     imgs.forEach(img => { 
-        if (img.complete) img.classList.add('loaded'); 
-        else img.addEventListener('load', ()=> img.classList.add('loaded')); });
-    const t0 = performance.now();
-    while (performance.now() - t0 < 1000) {}
+        if (img.complete) {
+            img.classList.add('loaded'); 
+        } else {
+            img.addEventListener('load', ()=> img.classList.add('loaded')); 
+        }
+    });
+    
+    console.log("Script chargé sans blocage !");
   });
 })();
