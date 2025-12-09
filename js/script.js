@@ -5,7 +5,6 @@
   window.addEventListener('load', function(){
     const imgs = document.querySelectorAll('.card img, .image-wrapper img');
     
-    // Gestion de l'effet d'apparition (fade-in)
     imgs.forEach(img => { 
         if (img.complete) {
             img.classList.add('loaded'); 
